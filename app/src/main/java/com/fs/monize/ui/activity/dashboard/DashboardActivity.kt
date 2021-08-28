@@ -1,12 +1,11 @@
-package com.fs.monize.ui.splash
+package com.fs.monize.ui.activity.dashboard
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.fs.monize.R
 
-class SplashScreenActivity : AppCompatActivity() {
+class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash_screen)
+        setContentView(R.layout.activity_dashboard)
     }
 }
