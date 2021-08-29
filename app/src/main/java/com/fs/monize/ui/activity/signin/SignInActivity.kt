@@ -2,6 +2,7 @@ package com.fs.monize.ui.activity.signin
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.fs.monize.R
 
 class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
