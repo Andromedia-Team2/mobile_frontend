@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.CalendarView
-import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.fs.monize.R
@@ -34,7 +33,7 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
                 binding.btnIncome.isSelected = true
                 binding.btnSpend.isSelected = false
                 Glide.with(this)
-                    .load(resources.getDrawable(R.drawable.income))
+                    .load(resources.getDrawable(R.drawable.img_income))
                     .apply(RequestOptions()
                     .override(250, 250))
                     .into(binding.imgTransaction)
@@ -43,7 +42,7 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
                 binding.btnIncome.isSelected = false
                 binding.btnSpend.isSelected = true
                 Glide.with(this)
-                    .load(resources.getDrawable(R.drawable.spend))
+                    .load(resources.getDrawable(R.drawable.img_spend))
                     .apply(RequestOptions()
                     .override(250, 250))
                     .into(binding.imgTransaction)
@@ -72,7 +71,7 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.btnIncome.isSelected = true
         Glide.with(this)
-            .load(resources.getDrawable(R.drawable.income))
+            .load(resources.getDrawable(R.drawable.img_income))
             .apply(RequestOptions()
                 .override(250, 250))
             .into(binding.imgTransaction)
