@@ -9,15 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Monize">
-        <activity android:name=".ui.activity.signout.SignOutActivity"></activity>
-        <activity android:name=".ui.activity.signin.SignInActivity" />
-        <activity android:name=".ui.activity.dashboard.DashboardActivity" />
-        <activity android:name=".ui.activity.splash.SplashScreenActivity">
+        <activity
+            android:theme="@style/Theme.MonizeActionBar"
+            android:name=".ui.activity.transaction.TransactionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.signout.SignOutActivity" />
+        <activity android:name=".ui.activity.signin.SignInActivity" />
+        <activity android:name=".ui.activity.dashboard.DashboardActivity" />
+        <activity android:name=".ui.activity.splash.SplashScreenActivity">
+
         </activity>
     </application>
 
