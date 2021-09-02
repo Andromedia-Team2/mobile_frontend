@@ -35,6 +35,6 @@ class DashboardFragment : Fragment() {
         lineEntry.add(Entry(0f, 0f))
 
         val lineDataSet = LineDataSet(lineEntry, "First")
-        lineDataSet.color = resources.getColor(R.color.teal_200)
+        lineDataSet.color = resources.getColor(R.color.purple_200)
     }
 }
