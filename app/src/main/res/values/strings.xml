@@ -3,4 +3,12 @@
     <string name="new_trans">Transaksi Baru</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nominal_simpanan">Nominal Simpanan</string>
+    <string name="nama_smpanan">Nama Smpanan</string>
+    <string name="keterangan">Keterangan</string>
+    <string name="edit_data">Edit Data</string>
+    <string name="ambil_data_dari_data_yang_dipilih_oleh_user">Ambil data dari data yang dipilih oleh user</string>
+    <string name="ambil_data_dari_data_yang_dipilih_oleh_user">Ambil data dari data yang dipilih oleh user</string>
+    <string name="ambil_data_dari_data_yang_dipilih_oleh_user">Ambil data dari data yang dipilih oleh user</string>
+    <string name="tanggal_menyimpan">Tanggal Menyimpan</string>
 </resources>
