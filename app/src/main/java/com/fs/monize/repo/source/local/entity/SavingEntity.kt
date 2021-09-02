@@ -9,10 +9,10 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "tbl_saving")
 data class SavingEntity(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "saving_id")
-    var saving_id: Int,
+    var saving_id: Int?,
 
     @ColumnInfo(name = "user_id")
     var user_id: Int,
@@ -30,7 +30,7 @@ data class SavingEntity(
     var desc_sav: String? = null
 ): Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readInt(),
+        parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readInt(),
         parcel.readInt(),
         parcel.readString(),
@@ -40,7 +40,7 @@ data class SavingEntity(
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(saving_id)
+        parcel.writeValue(saving_id)
         parcel.writeInt(user_id)
         parcel.writeInt(asset_id)
         parcel.writeString(date_sav)

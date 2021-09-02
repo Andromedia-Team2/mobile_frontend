@@ -2,7 +2,8 @@ package com.fs.monize.repo
 
 import androidx.lifecycle.LiveData
 import com.fs.monize.repo.source.local.LocalDataSource
-import com.fs.monize.repo.source.local.entity.GoalsBoardEntity
+import com.fs.monize.repo.source.local.entity.FundEntity
+import com.fs.monize.repo.source.local.entity.TransactionEntity
 import com.fs.monize.repo.source.local.entity.UserEntity
 
 class FundRepository private constructor(private val localDataSource: LocalDataSource) : FundDataSource{
@@ -27,15 +28,23 @@ class FundRepository private constructor(private val localDataSource: LocalDataS
 
     override fun getUserById(userId: Int): LiveData<UserEntity> = localDataSource.getUserById(userId)
 
-    override fun insertGoals(goals: GoalsBoardEntity) = localDataSource.insertGoals(goals)
+    override fun insertTransaction(transaction: TransactionEntity) = localDataSource.insertTransaction(transaction)
 
-    override fun updateGoals(goals: GoalsBoardEntity) = localDataSource.updateGoals(goals)
+    override fun updateTransaction(transaction: TransactionEntity) = localDataSource.updateTransaction(transaction)
 
-    override fun deleteGoals(goals: GoalsBoardEntity) = localDataSource.deleteGoals(goals)
+    override fun deleteTransaction(transaction: TransactionEntity) = localDataSource.deleteTransaction(transaction)
 
-    override fun getGoals(): LiveData<List<GoalsBoardEntity>> = localDataSource.getGoals()
+    override fun getTransaction(): LiveData<List<TransactionEntity>> = localDataSource.getTransaction()
 
-    override fun getGoalsById(goalId: Int): LiveData<GoalsBoardEntity> = localDataSource.getGoalsById(goalId)
+    override fun getTransactionById(transactionId: Int): LiveData<TransactionEntity> = localDataSource.getTransactionById(transactionId)
 
-    override fun getGoalsByIdf(goalIdf: Int): LiveData<GoalsBoardEntity> = localDataSource.getGoalsByIdf(goalIdf)
+    override fun insertFund(fund: FundEntity)  = localDataSource.insertFund(fund)
+
+    override fun updateFund(fund: FundEntity) = localDataSource.updateFund(fund)
+
+    override fun deleteFund(fund: FundEntity) = localDataSource.deleteFund(fund)
+
+    override fun getFund(): LiveData<List<FundEntity>> = localDataSource.getFund()
+
+    override fun getFundById(fundId: Int): LiveData<FundEntity> = localDataSource.getFundById(fundId)
 }

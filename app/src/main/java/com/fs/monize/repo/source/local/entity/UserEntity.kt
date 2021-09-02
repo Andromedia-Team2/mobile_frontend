@@ -9,33 +9,28 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "tbl_user")
 data class UserEntity(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "user_id")
-    var user_id: Int,
+    var user_id: Int?,
 
-    @ColumnInfo(name = "username")
-    var username: String? = null,
+    @ColumnInfo(name = "user_name")
+    var user_name: String? = null,
 
-    @ColumnInfo(name = "email")
-    var email: String? = null,
-
-    @ColumnInfo(name = "password")
-    var password: String? = null
+    @ColumnInfo(name = "user_img")
+    var user_img: Int
 ): Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readInt(),
+        parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readString(),
-        parcel.readString(),
-        parcel.readString()
+        parcel.readInt()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(user_id)
-        parcel.writeString(username)
-        parcel.writeString(email)
-        parcel.writeString(password)
+        parcel.writeValue(user_id)
+        parcel.writeString(user_name)
+        parcel.writeInt(user_img)
     }
 
     override fun describeContents(): Int {

@@ -9,10 +9,10 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "tbl_asset")
 data class AssetEntity(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "asset_id")
-    var asset_id: Int,
+    var asset_id: Int?,
 
     @ColumnInfo(name = "fund_id")
     var fund_id: Int,
@@ -21,14 +21,14 @@ data class AssetEntity(
     var asset_balance: Int
 ): Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readInt(),
+        parcel.readValue(Int::class.java.classLoader) as? Int,
         parcel.readInt(),
         parcel.readInt()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeInt(asset_id)
+        parcel.writeValue(asset_id)
         parcel.writeInt(fund_id)
         parcel.writeInt(asset_balance)
     }

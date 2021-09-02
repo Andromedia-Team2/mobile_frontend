@@ -1,13 +1,20 @@
 package com.fs.monize.ui.activity.transaction
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.CalendarView
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.fs.monize.R
 import com.fs.monize.databinding.ActivityTransactionBinding
+import com.fs.monize.repo.source.local.entity.TransactionEntity
+import com.fs.monize.ui.activity.dashboard.DashboardActivity
+import com.fs.monize.ui.viewmodel.MainViewModel
+import com.fs.monize.ui.viewmodel.ViewModelFactory
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.layout_bottom_calendar.*
 import kotlinx.android.synthetic.main.layout_bottom_calendar.view.*
@@ -17,6 +24,10 @@ import java.util.*
 
 class TransactionActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityTransactionBinding
+    private lateinit var mainViewModel: MainViewModel
+    private lateinit var transactionEntity: TransactionEntity
+    private var category = "income"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTransactionBinding.inflate(layoutInflater)
@@ -27,11 +38,13 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnSpend.setOnClickListener(this)
         binding.linearDate.setOnClickListener(this)
         binding.txtIcon.setOnClickListener(this)
+        binding.btnSaveTrans.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_income -> {
+                category = "income"
                 binding.btnIncome.isSelected = true
                 binding.btnSpend.isSelected = false
                 Glide.with(this)
@@ -41,6 +54,7 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
                     .into(binding.imgTransaction)
             }
             R.id.btn_spend ->{
+                category = "spend"
                 binding.btnIncome.isSelected = false
                 binding.btnSpend.isSelected = true
                 Glide.with(this)
@@ -209,10 +223,14 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
                 }
                 dialogIcon.show()
             }
+            R.id.btn_save_trans -> saveData()
         }
     }
 
     private fun setUpData(){
+        val factory = ViewModelFactory.getInstance(this)
+        mainViewModel = ViewModelProvider(this, factory).get(MainViewModel::class.java)
+
         supportActionBar!!.setTitle(resources.getString(R.string.new_trans))
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.btnIncome.isSelected = true
@@ -224,6 +242,19 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
         val sdf = SimpleDateFormat("dd MMMM yyyy")
         val currentDate = sdf.format(Date())
         binding.txtDate.text = currentDate
+    }
+
+    private fun saveData(){
+        val nominal: Int = Integer.parseInt(binding.nominalInput.text.toString())
+        val name = binding.nameInput.text.toString()
+        val desc = binding.descInput.text.toString()
+        val date = binding.txtDate.text.toString()
+        val icon = binding.txtIcon.text.toString()
+        transactionEntity = TransactionEntity(0, name, nominal, desc, date, icon, category )
+        mainViewModel.insertTransaction(transactionEntity)
+        Toast.makeText(this, "Data Disimpan", Toast.LENGTH_SHORT).show()
+        startActivity(Intent(this, DashboardActivity::class.java))
+        finish()
     }
 
     override fun onSupportNavigateUp(): Boolean {
