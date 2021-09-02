@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Monize">
         <activity
+<<<<<<< HEAD
             android:name=".ui.activity.menabung.Menabung"
             android:exported="true" />
         <activity
@@ -24,16 +25,29 @@
         <activity android:name=".ui.activity.signin.SignInActivity" />
         <activity android:name=".ui.activity.dashboard.DashboardActivity" />
         <activity android:name=".ui.activity.splash.SplashScreenActivity">
+=======
+            android:theme="@style/Theme.MonizeActionBar"
+            android:name=".ui.activity.transaction.TransactionActivity">
+>>>>>>> c3a83fa5bab4d474cab39c4d771dc26b674a3e2f
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+=======
+        <activity android:name=".ui.activity.signout.SignOutActivity" />
+        <activity android:name=".ui.activity.signin.SignInActivity" />
+        <activity android:name=".ui.activity.dashboard.DashboardActivity" />
+        <activity android:name=".ui.activity.splash.SplashScreenActivity">
+
+        </activity>
+>>>>>>> c3a83fa5bab4d474cab39c4d771dc26b674a3e2f
     </application>
 
 </manifest>

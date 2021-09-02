@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dashboard"
+        android:title="Dashboard"
+        android:icon="@drawable/ic_dashboard"/>
+
+    <item
+        android:id="@+id/Transaksi"
+        android:title="Transaksi"
+        android:icon="@drawable/ic_transaksi"/>
+
+    <item
+        android:id="@+id/Simpanan"
+        android:title="Simpanan"
+        android:icon="@drawable/ic_simpanan"/>
+
+    <item
+        android:id="@+id/Menabung"
+        android:title="Menabung"
+        android:icon="@drawable/ic_menabung"/>
+</menu>

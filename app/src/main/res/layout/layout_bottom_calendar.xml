@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/bottomSheetContainer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/round_bottom"
+    android:paddingTop="10dp">
+    <CalendarView
+        android:id="@+id/calendar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"/>
+    <Button
+        android:id="@+id/btn_calendar_apply"
+        android:layout_width="105dp"
+        android:layout_height="40dp"
+        android:text="Terapkan"
+        android:backgroundTint="@color/purple_500"
+        android:background="@drawable/round_button1"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:layout_marginBottom="90dp"/>
+
+</LinearLayout>
