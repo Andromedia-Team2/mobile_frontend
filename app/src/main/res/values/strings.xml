@@ -1,42 +1,4 @@
 <resources>
     <string name="app_name">Monize</string>
-    <
-    <
-    <
-    <
-    <
-    <
-    < HEAD
-    <string name="simpanan">Simpanan</string>
-    <string name="dana_yang_disimpan_untuk_kamu_pakai_sewaktu_waktu_tapi_tidak_masuk_ke_saldo_utama">Dana yang disimpan untuk kamu pakai sewaktu-waktu, tapi tidak masuk ke saldo utama</string>
-    <string name="dana_darurat">Dana darurat</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <string name="dana_darurat_yang_tersimpan_saat_ini">Dana darurat yang tersimpan saat ini</string>
-    <string name="asuransi">Asuransi</string>
-    <string name="dana_asuransi_yang_tersimpan_saat_ini">Dana Asuransi yang tersimpan saat ini</string>
-    <string name="todo">TODO</string>
-    <string name="todo">TODO</string>
-    <string name="reksadana">Reksadana</string>
-    <string name="asset_reksadana_saat_ini">Asset Reksadana saat ini</string>
-    <string name="title_activity_tambah_simpanan">TambahSimpanan</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="tambah_simpanan">Tambah Simpanan</string>
-    <string name="tanggal_simpanan">Tanggal Simpanan</string>
-    <string name="todo">TODO</string>
-    <string name="rp">Rp.</string>
-    <string name="keterangan">Keterangan</string>
-    <string name="masukkan_nominal">Masukkan Nominal</string>
-    =======
     <string name="new_trans">Transaksi Baru</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    >>>>>>> c3a83fa5bab4d474cab39c4d771dc26b674a3e2f
 </resources>

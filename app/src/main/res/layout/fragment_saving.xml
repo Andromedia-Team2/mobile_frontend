@@ -8,46 +8,44 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="32sp"
-                android:layout_marginTop="30sp"
+                android:layout_marginLeft="37sp"
+                android:layout_marginTop="29sp"
                 android:fontFamily="@font/poppins_medium"
                 android:text="Menabung"
-                android:textColor="#333333"
-                android:textSize="24sp" />
+                android:textColor="@color/black"
+                android:textSize="18dp" />
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="282dp"
-                android:layout_height="270dp"
-                android:layout_marginLeft="60sp"
+                android:layout_width="263dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="18dp"
                 android:src="@drawable/background_menabung"/>
 
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="255dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70sp"
-                android:layout_marginBottom="30sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
                 android:text="Buat rencana menabung dan capai tujuanmu"
-                android:textAlignment="center"
-                android:textColor="#333333" />
+                android:textAlignment="center" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="500dp"
             android:background="@drawable/round_bg_blue"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
@@ -57,7 +55,6 @@
                 android:textColor="#FFFFFF"
                 android:layout_marginTop="20sp"
                 android:layout_marginLeft="60sp"/>
-
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
@@ -67,67 +64,8 @@
                 android:textColor="#FFFFFF"
                 android:layout_marginTop="5sp"
                 android:layout_marginLeft="60sp"/>
-
             <ProgressBar
                 android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="300sp"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginLeft="60sp"
-                android:layout_marginTop="10dp"/>
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:text="UKT Kuliah"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="20sp"
-                android:layout_marginLeft="60sp"/>
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:text="Dana tabungan untuk pembayaran ukt"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="5sp"
-                android:layout_marginLeft="60sp"/>
-
-            <ProgressBar
-                android:id="@+id/progressBar2"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="300sp"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginLeft="60sp"
-                android:layout_marginTop="10dp"/>
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Liburan"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="20sp"
-                android:layout_marginLeft="60sp"/>
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:text="Dana penyimpanan untuk liburan"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="5sp"
-                android:layout_marginLeft="60sp"/>
-
-            <ProgressBar
-                android:id="@+id/progressBar3"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="300sp"
                 android:layout_height="wrap_content"
