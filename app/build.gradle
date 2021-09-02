@@ -50,16 +50,13 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
     implementation "com.google.android.material:material:$materialVersion"
     implementation "com.github.bumptech.glide:glide:$glideVersion"
-<<<<<<< HEAD
+
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
-=======
+
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-<<<<<<< HEAD
->>>>>>> c3a83fa5bab4d474cab39c4d771dc26b674a3e2f
-=======
+
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
->>>>>>> 6f5616397464d48e80f02ca86db4ebc7013b4a67
 
     //testing
     testImplementation "junit:junit:$junitVersion"

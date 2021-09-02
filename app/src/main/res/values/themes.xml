@@ -14,7 +14,6 @@
         <!-- Customize your theme here. -->
         <item name="android:fontFamily">@font/poppins_light</item>
     </style>
-<<<<<<< HEAD
 
     <style name="Theme.Monize.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -24,7 +23,7 @@
     <style name="Theme.Monize.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Monize.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-=======
+
     <style name="Theme.MonizeActionBar" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
@@ -45,5 +44,4 @@
     <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@android:color/transparent</item>
     </style>
->>>>>>> c3a83fa5bab4d474cab39c4d771dc26b674a3e2f
 </resources>
