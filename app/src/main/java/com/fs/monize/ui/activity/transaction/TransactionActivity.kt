@@ -11,6 +11,7 @@ import com.fs.monize.databinding.ActivityTransactionBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import kotlinx.android.synthetic.main.layout_bottom_calendar.*
 import kotlinx.android.synthetic.main.layout_bottom_calendar.view.*
+import kotlinx.android.synthetic.main.layout_bottom_icon.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -25,6 +26,7 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
         binding.btnIncome.setOnClickListener(this)
         binding.btnSpend.setOnClickListener(this)
         binding.linearDate.setOnClickListener(this)
+        binding.txtIcon.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -50,18 +52,162 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
             R.id.linear_date ->{
                 val btnsheet = layoutInflater.inflate(R.layout.layout_bottom_calendar, null)
                 val dialog = BottomSheetDialog(this, R.style.BottomSheetDialog)
+                val formatter = SimpleDateFormat("dd/MM/yyyy")
+                val sdf = SimpleDateFormat("dd MMMM yyyy")
+                var currentDate = sdf.format(Date())
                 dialog.setContentView(btnsheet)
+                btnsheet.calendar.setOnDateChangeListener{ view, year, month, dayOfMonth ->
+                    val bln = month+1
+                    val tgl = dayOfMonth.toString()+"/"+bln.toString()+"/"+year.toString()
+                    val date = formatter.parse(tgl)
+                    currentDate = sdf.format(date)
+                }
                 btnsheet.btn_calendar_apply.setOnClickListener {
+                    binding.txtDate.text = currentDate
                     dialog.dismiss()
                 }
-                val calendar = btnsheet.findViewById<CalendarView>(R.id.calendar)
-                calendar.setOnDateChangeListener{ view, year, month, dayOfMonth ->
-                    val tgl = calendar.date
-                    val sdf = SimpleDateFormat("dd MMMM yyyy")
-                    val currentDate = sdf.format(tgl)
-                    binding.txtDate.text = currentDate
-                }
                 dialog.show()
+            }
+            R.id.txt_icon ->{
+                var icon_name = "ikon_pin"
+                val btnsheetIcon = layoutInflater.inflate(R.layout.layout_bottom_icon, null)
+                val dialogIcon = BottomSheetDialog(this, R.style.BottomSheetDialog)
+                dialogIcon.setContentView(btnsheetIcon)
+                btnsheetIcon.icon_call.setOnClickListener {
+                    icon_name = "ikon_call"
+                    btnsheetIcon.icon_call.isSelected = true
+                    btnsheetIcon.icon_tools.isSelected = false
+                    btnsheetIcon.icon_music.isSelected = false
+                    btnsheetIcon.icon_car.isSelected = false
+                    btnsheetIcon.icon_movie.isSelected = false
+                    btnsheetIcon.icon_chart.isSelected = false
+                    btnsheetIcon.icon_electric.isSelected = false
+                    btnsheetIcon.icon_phone.isSelected = false
+                    btnsheetIcon.icon_computer.isSelected = false
+                    btnsheetIcon.icon_camera.isSelected = false
+                }
+                btnsheetIcon.icon_tools.setOnClickListener {
+                    icon_name = "ikon_tools"
+                    btnsheetIcon.icon_call.isSelected = false
+                    btnsheetIcon.icon_tools.isSelected = true
+                    btnsheetIcon.icon_music.isSelected = false
+                    btnsheetIcon.icon_car.isSelected = false
+                    btnsheetIcon.icon_movie.isSelected = false
+                    btnsheetIcon.icon_chart.isSelected = false
+                    btnsheetIcon.icon_electric.isSelected = false
+                    btnsheetIcon.icon_phone.isSelected = false
+                    btnsheetIcon.icon_computer.isSelected = false
+                    btnsheetIcon.icon_camera.isSelected = false
+                }
+                btnsheetIcon.icon_music.setOnClickListener {
+                    icon_name = "ikon_music"
+                    btnsheetIcon.icon_call.isSelected = false
+                    btnsheetIcon.icon_tools.isSelected = false
+                    btnsheetIcon.icon_music.isSelected = true
+                    btnsheetIcon.icon_car.isSelected = false
+                    btnsheetIcon.icon_movie.isSelected = false
+                    btnsheetIcon.icon_chart.isSelected = false
+                    btnsheetIcon.icon_electric.isSelected = false
+                    btnsheetIcon.icon_phone.isSelected = false
+                    btnsheetIcon.icon_computer.isSelected = false
+                    btnsheetIcon.icon_camera.isSelected = false
+                }
+                btnsheetIcon.icon_car.setOnClickListener {
+                    icon_name = "ikon_car"
+                    btnsheetIcon.icon_call.isSelected = false
+                    btnsheetIcon.icon_tools.isSelected = false
+                    btnsheetIcon.icon_music.isSelected = false
+                    btnsheetIcon.icon_car.isSelected = true
+                    btnsheetIcon.icon_movie.isSelected = false
+                    btnsheetIcon.icon_chart.isSelected = false
+                    btnsheetIcon.icon_electric.isSelected = false
+                    btnsheetIcon.icon_phone.isSelected = false
+                    btnsheetIcon.icon_computer.isSelected = false
+                    btnsheetIcon.icon_camera.isSelected = false
+                }
+                btnsheetIcon.icon_movie.setOnClickListener {
+                    icon_name = "ikon_movie"
+                    btnsheetIcon.icon_call.isSelected = false
+                    btnsheetIcon.icon_tools.isSelected = false
+                    btnsheetIcon.icon_music.isSelected = false
+                    btnsheetIcon.icon_car.isSelected = false
+                    btnsheetIcon.icon_movie.isSelected = true
+                    btnsheetIcon.icon_chart.isSelected = false
+                    btnsheetIcon.icon_electric.isSelected = false
+                    btnsheetIcon.icon_phone.isSelected = false
+                    btnsheetIcon.icon_computer.isSelected = false
+                    btnsheetIcon.icon_camera.isSelected = false
+                }
+                btnsheetIcon.icon_chart.setOnClickListener {
+                    icon_name = "ikon_chart"
+                    btnsheetIcon.icon_call.isSelected = false
+                    btnsheetIcon.icon_tools.isSelected = false
+                    btnsheetIcon.icon_music.isSelected = false
+                    btnsheetIcon.icon_car.isSelected = false
+                    btnsheetIcon.icon_movie.isSelected = false
+                    btnsheetIcon.icon_chart.isSelected = true
+                    btnsheetIcon.icon_electric.isSelected = false
+                    btnsheetIcon.icon_phone.isSelected = false
+                    btnsheetIcon.icon_computer.isSelected = false
+                    btnsheetIcon.icon_camera.isSelected = false
+                }
+                btnsheetIcon.icon_electric.setOnClickListener {
+                    icon_name = "ikon_electric"
+                    btnsheetIcon.icon_call.isSelected = false
+                    btnsheetIcon.icon_tools.isSelected = false
+                    btnsheetIcon.icon_music.isSelected = false
+                    btnsheetIcon.icon_car.isSelected = false
+                    btnsheetIcon.icon_movie.isSelected = false
+                    btnsheetIcon.icon_chart.isSelected = false
+                    btnsheetIcon.icon_electric.isSelected = true
+                    btnsheetIcon.icon_phone.isSelected = false
+                    btnsheetIcon.icon_computer.isSelected = false
+                    btnsheetIcon.icon_camera.isSelected = false
+                }
+                btnsheetIcon.icon_phone.setOnClickListener {
+                    icon_name = "ikon_phone"
+                    btnsheetIcon.icon_call.isSelected = false
+                    btnsheetIcon.icon_tools.isSelected = false
+                    btnsheetIcon.icon_music.isSelected = false
+                    btnsheetIcon.icon_car.isSelected = false
+                    btnsheetIcon.icon_movie.isSelected = false
+                    btnsheetIcon.icon_chart.isSelected = false
+                    btnsheetIcon.icon_electric.isSelected = false
+                    btnsheetIcon.icon_phone.isSelected = true
+                    btnsheetIcon.icon_computer.isSelected = false
+                    btnsheetIcon.icon_camera.isSelected = false
+                }
+                btnsheetIcon.icon_computer.setOnClickListener {
+                    icon_name = "ikon_computer"
+                    btnsheetIcon.icon_call.isSelected = false
+                    btnsheetIcon.icon_tools.isSelected = false
+                    btnsheetIcon.icon_music.isSelected = false
+                    btnsheetIcon.icon_car.isSelected = false
+                    btnsheetIcon.icon_movie.isSelected = false
+                    btnsheetIcon.icon_chart.isSelected = false
+                    btnsheetIcon.icon_electric.isSelected = false
+                    btnsheetIcon.icon_phone.isSelected = false
+                    btnsheetIcon.icon_computer.isSelected = true
+                    btnsheetIcon.icon_camera.isSelected = false
+                }
+                btnsheetIcon.icon_camera.setOnClickListener {
+                    icon_name = "ikon_camera"
+                    btnsheetIcon.icon_call.isSelected = false
+                    btnsheetIcon.icon_tools.isSelected = false
+                    btnsheetIcon.icon_music.isSelected = false
+                    btnsheetIcon.icon_car.isSelected = false
+                    btnsheetIcon.icon_movie.isSelected = false
+                    btnsheetIcon.icon_chart.isSelected = false
+                    btnsheetIcon.icon_electric.isSelected = false
+                    btnsheetIcon.icon_phone.isSelected = false
+                    btnsheetIcon.icon_computer.isSelected = false
+                    btnsheetIcon.icon_camera.isSelected = true
+                }
+                btnsheetIcon.btn_icon_apply.setOnClickListener {
+                    binding.txtIcon.text = icon_name
+                    dialogIcon.dismiss()
+                }
+                dialogIcon.show()
             }
         }
     }
