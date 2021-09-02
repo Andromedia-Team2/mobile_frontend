@@ -22,8 +22,11 @@
         <activity android:name=".ui.activity.signin.SignInActivity" />
         <activity android:name=".ui.activity.dashboard.DashboardActivity" />
         <activity android:name=".ui.activity.splash.SplashScreenActivity">
-
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
