@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.activity.dashboard.AssetsFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_bg_blue_bottom"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                android:id="@+id/judul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="37dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Simpanan"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+            <TextView
+                android:id="@+id/subjudul"
+                android:layout_width="240dp"
+                android:layout_height="67dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="80dp"
+                android:fontFamily="@font/roboto_light"
+                android:text="Dana yang disimpan untuk kamu pakai sewaktu-waktu, tapi tidak masuk ke saldo utama"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="16dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp"
+                android:layout_marginTop="36dp">
+                <ImageView
+                    android:id="@+id/icon_darurat"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="29dp"
+                    app:srcCompat="@drawable/icon01" />
+                <LinearLayout
+                    android:layout_width="192dp"
+                    android:layout_height="46dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/nama_darurat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Dana darurat"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/desc_darurat"
+                        android:layout_width="198dp"
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="Dana darurat yang tersedia saat ini"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/nominal_darurat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="12dp"
+                    android:text="Rp. 30.000.000"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp"
+                android:layout_marginTop="20dp">
+                <ImageView
+                    android:id="@+id/icon_asuransi"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="29dp"
+                    app:srcCompat="@drawable/icon02" />
+                <LinearLayout
+                    android:layout_width="192dp"
+                    android:layout_height="46dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/nama_asuransi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Asuransi"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/desc_asuransi"
+                        android:layout_width="198dp"
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="Premi bulanan 150.000"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/nominal_asuransi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="12dp"
+                    android:text="Rp. 30.000.000"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="45dp">
+                <ImageView
+                    android:id="@+id/icon_asset"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="29dp"
+                    app:srcCompat="@drawable/icon03" />
+                <LinearLayout
+                    android:layout_width="192dp"
+                    android:layout_height="46dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/nama_asset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="Asset"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/desc_asset"
+                        android:layout_width="198dp"
+                        android:layout_height="18dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="NAB 2.500 sampai tahun depan"
+                        android:textColor="@color/white"
+                        android:textSize="10dp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/nominal_asset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="12dp"
+                    android:text="Rp. 30.000.000"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="163dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="31dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+            app:srcCompat="@drawable/icon_simpanan" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:text="Tambah Data"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/round_button1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

@@ -10,19 +10,19 @@
     android:paddingRight="14dp">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/trans_icon"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginLeft="14dp"
         android:background="@drawable/round_button"
-        android:backgroundTint="@color/income_bg_color"
+        android:backgroundTint="@color/trans_bg_color"
         android:padding="8dp"
         android:src="@drawable/ikon_tools"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/trans_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
@@ -30,11 +30,11 @@
         android:textColor="@color/black"
         android:textSize="12dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/trans_icon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/trans_nominal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rp.  -150.000,-"
@@ -45,24 +45,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/trans_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="6dp"
         android:text="Ganti oli + busi"
         android:textSize="10dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toEndOf="@+id/trans_icon"
+        app:layout_constraintTop_toBottomOf="@+id/trans_name" />
 
     <TextView
+        android:id="@+id/trans_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:text="31 Agustus 2021"
         android:textSize="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/trans_nominal" />
 
     <View
         android:layout_width="200dp"
@@ -70,5 +71,5 @@
         android:layout_marginTop="16dp"
         android:background="@color/grey"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/trans_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>

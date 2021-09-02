@@ -5,26 +5,23 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.fs.monize.repo.source.local.entity.*
-import com.fs.monize.repo.source.local.room.dao.GoalsDao
+import com.fs.monize.repo.source.local.room.dao.FundDao
+import com.fs.monize.repo.source.local.room.dao.TransactionDao
 import com.fs.monize.repo.source.local.room.dao.UserDao
 
 @Database(
     entities = [
         UserEntity::class,
-        GoalsBoardEntity::class,
         SavingEntity::class,
         AssetEntity::class,
         FundEntity::class,
-        DebitEntity::class,
-        CreditEntity::class,
-        CategoryEntity::class,
-        LimitBoardEntity::class,
-        ScoreBoardEntity::class],
+        TransactionEntity::class],
     version = 1,
     exportSchema = false)
 abstract class MonizeDatabase : RoomDatabase(){
     abstract fun userDao(): UserDao
-    abstract fun goalsDao(): GoalsDao
+    abstract fun transactionDao(): TransactionDao
+    abstract fun fundDao(): FundDao
 
     companion object {
         @Volatile

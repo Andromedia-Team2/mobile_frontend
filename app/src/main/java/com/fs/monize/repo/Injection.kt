@@ -7,7 +7,7 @@ import com.fs.monize.repo.source.local.room.db.MonizeDatabase
 object Injection {
     fun provideRepository(context: Context): FundRepository {
         val database =MonizeDatabase.getInstance(context)
-        val localDataSource = LocalDataSource.getInstance(database.userDao(), database.goalsDao())
+        val localDataSource = LocalDataSource.getInstance(database.userDao(), database.transactionDao(), database.fundDao())
         return FundRepository.getInstance(localDataSource)
     }
 }

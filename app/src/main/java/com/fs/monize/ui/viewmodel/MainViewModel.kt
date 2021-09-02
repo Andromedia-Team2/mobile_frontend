@@ -3,7 +3,8 @@ package com.fs.monize.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.fs.monize.repo.FundRepository
-import com.fs.monize.repo.source.local.entity.GoalsBoardEntity
+import com.fs.monize.repo.source.local.entity.FundEntity
+import com.fs.monize.repo.source.local.entity.TransactionEntity
 import com.fs.monize.repo.source.local.entity.UserEntity
 
 class MainViewModel (private val fundRepository: FundRepository): ViewModel() {
@@ -14,10 +15,15 @@ class MainViewModel (private val fundRepository: FundRepository): ViewModel() {
     fun getUser(): LiveData<List<UserEntity>> = fundRepository.getUser()
     fun getUserById(userId: Int): LiveData<UserEntity> = fundRepository.getUserById(userId)
 
-    fun insertGoals(goals: GoalsBoardEntity) = fundRepository.insertGoals(goals)
-    fun updateGoals(goals: GoalsBoardEntity) = fundRepository.updateGoals(goals)
-    fun deleteGoals(goals: GoalsBoardEntity) = fundRepository.deleteGoals(goals)
-    fun getGoals(): LiveData<List<GoalsBoardEntity>> = fundRepository.getGoals()
-    fun getGoalsById(goalId: Int): LiveData<GoalsBoardEntity> = fundRepository.getGoalsById(goalId)
-    fun getGoalsByIdf(goalIdf: Int): LiveData<GoalsBoardEntity> = fundRepository.getGoalsByIdf(goalIdf)
+    fun insertTransaction(transaction: TransactionEntity) = fundRepository.insertTransaction(transaction)
+    fun updateTransaction(transaction: TransactionEntity) = fundRepository.updateTransaction(transaction)
+    fun deleteTransaction(transaction: TransactionEntity) = fundRepository.deleteTransaction(transaction)
+    fun getTransaction(): LiveData<List<TransactionEntity>> = fundRepository.getTransaction()
+    fun getTransactionById(transactionId: Int): LiveData<TransactionEntity> = fundRepository.getTransactionById(transactionId)
+
+    fun insertFund(fund: FundEntity) = fundRepository.insertFund(fund)
+    fun updateFund(fund: FundEntity) = fundRepository.updateFund(fund)
+    fun deleteFund(fund: FundEntity) = fundRepository.deleteFund(fund)
+    fun getFund(): LiveData<List<FundEntity>> = fundRepository.getFund()
+    fun getFundById(fundId: Int): LiveData<FundEntity> = fundRepository.getFundById(fundId)
 }

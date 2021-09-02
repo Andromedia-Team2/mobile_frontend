@@ -9,4 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Monize">
+        <activity
+            android:theme="@style/Theme.MonizeActionBar"
+            android:name=".ui.activity.transaction.TransactionActivity">
+        </activity>
+        <activity android:name=".ui.activity.signout.SignOutActivity" />
+        <activity android:name=".ui.activity.signin.SignInActivity" />
+        <activity android:name=".ui.activity.dashboard.DashboardActivity" />
+        <activity
+            android:name=".ui.activity.splash.SplashScreenActivity"
+            android:theme="@style/SplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
+
+</manifest>
