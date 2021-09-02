@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Beli HP Baru"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="60sp"/>
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_light"
+        android:text="Beli HP iPhone 11 Promax"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="60sp"/>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300sp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginLeft="60sp"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>

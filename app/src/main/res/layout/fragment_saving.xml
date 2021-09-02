@@ -46,32 +46,12 @@
             android:layout_height="500dp"
             android:background="@drawable/round_bg_blue"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/textView5"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_transaction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Beli HP Baru"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="20sp"
-                android:layout_marginLeft="60sp"/>
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:text="Beli HP iPhone 11 Promax"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="5sp"
-                android:layout_marginLeft="60sp"/>
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="300sp"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:layout_marginLeft="60sp"
-                android:layout_marginTop="10dp"/>
+                android:paddingBottom="26dp"
+                tools:listitem="@layout/item_saving"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>
