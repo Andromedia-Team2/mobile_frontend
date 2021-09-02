@@ -228,6 +228,7 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
                 dialogIcon.show()
             }
             R.id.btn_save_trans -> saveData()
+            R.id.btn_save_trans -> startActivity(Intent(this,DashboardActivity::class.java))
         }
     }
 

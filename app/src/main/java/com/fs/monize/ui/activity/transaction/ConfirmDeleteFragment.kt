@@ -1,34 +1,47 @@
 package com.fs.monize.ui.activity.transaction
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.fs.monize.R
+import android.widget.FrameLayout
+import com.fs.monize.databinding.FragmentAddSavingBinding
+import com.fs.monize.databinding.FragmentConfirmDeleteBinding
+import com.fs.monize.databinding.FragmentSavingBinding
+import com.fs.monize.databinding.FragmentTransactionBinding
+import com.fs.monize.ui.activity.dashboard.DashboardActivity
+import com.fs.monize.ui.activity.menabung.addSaving
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ConfirmDeleteFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ConfirmDeleteFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
+class ConfirmDeleteFragment : Fragment(), View.OnClickListener {
+    private lateinit var binding: FragmentConfirmDeleteBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        binding = FragmentConfirmDeleteBinding.inflate(layoutInflater)
+
+        fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                         savedInstanceState: Bundle?): View? {
+            binding = FragmentConfirmDeleteBinding.inflate(inflater, container, false)
+            return binding.root
         }
     }
+
+    override fun onClick(v: View?) {
+        when(v?.id){
+
+            R.id.hapus -> startActivity(Intent(this, FragmentTransactionBinding::class.java))
+        }
+    }
+
+    private fun Intent(confirmDeleteFragment: ConfirmDeleteFragment, java: Class<FragmentTransactionBinding>): Intent? {
+        return null
+    }
+
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,23 +51,7 @@ class ConfirmDeleteFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_confirm_delete, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ConfirmDeleteFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ConfirmDeleteFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }
+
+
