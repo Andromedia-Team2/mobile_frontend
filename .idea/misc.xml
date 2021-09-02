@@ -12,14 +12,15 @@
         <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/activity_menabung.xml" value="0.1" />
         <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/activity_sign_out.xml" value="0.209375" />
         <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/activity_simpanan.xml" value="0.1" />
-        <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/activity_transaction.xml" value="0.2046875" />
+        <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/activity_transaction.xml" value="0.1" />
+        <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/fragment_add_saving.xml" value="0.25" />
         <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/fragment_assets.xml" value="0.5" />
         <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/fragment_confirm_delete.xml" value="0.2046875" />
         <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/fragment_dashboard.xml" value="0.2046875" />
         <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/fragment_edit_simpanan.xml" value="0.25" />
-        <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/fragment_saving.xml" value="0.2046875" />
+        <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/fragment_saving.xml" value="0.33" />
         <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/fragment_transaction.xml" value="0.2046875" />
-        <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/item_saving.xml" value="0.2046875" />
+        <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/item_saving.xml" value="0.25" />
         <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/item_transaction.xml" value="0.2046875" />
         <entry key="..\:/Developer/Code/magang/mobile_frontend/app/src/main/res/layout/layout_bottom_icon.xml" value="0.2046875" />
       </map>
