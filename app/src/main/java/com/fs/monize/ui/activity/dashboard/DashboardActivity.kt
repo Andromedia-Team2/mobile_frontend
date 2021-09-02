@@ -25,10 +25,10 @@ class DashboardActivity : AppCompatActivity(), BottomNavigationView.OnNavigation
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         var frag: Fragment = TransactionFragment()
         when (item.itemId) {
-            R.id.dashboard -> Toast.makeText(this, "Dashboard clicked", Toast.LENGTH_SHORT).show()
+            R.id.dashboard -> frag = DashboardFragment()
             R.id.Transaksi -> frag = TransactionFragment()
-            R.id.Simpanan -> Toast.makeText(this, "Simpanan clicked", Toast.LENGTH_SHORT).show()
-            R.id.Menabung -> Toast.makeText(this, "Menabung clicked", Toast.LENGTH_SHORT).show()
+            R.id.Simpanan -> frag = AssetsFragment()
+            R.id.Menabung -> frag = SavingFragment()
         }
         supportFragmentManager.beginTransaction().replace(R.id.fragment_container, frag!!).commit()
         return true

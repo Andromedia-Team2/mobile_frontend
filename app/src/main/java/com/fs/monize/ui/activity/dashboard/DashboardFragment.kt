@@ -12,7 +12,7 @@ import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import java.security.KeyStore
 
-class fragment_dashboard : Fragment() {
+class DashboardFragment : Fragment() {
     private lateinit var binding: FragmentDashboardBinding
 
     override fun onCreateView(
@@ -30,7 +30,6 @@ class fragment_dashboard : Fragment() {
     fun setLine() {
         val xvalue = ArrayList<String>()
         xvalue.add("")
-
 
         val lineEntry = ArrayList<Entry>();
         lineEntry.add(Entry(0f, 0f))
