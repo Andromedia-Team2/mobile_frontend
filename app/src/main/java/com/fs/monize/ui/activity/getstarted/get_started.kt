@@ -1,12 +1,12 @@
-package com.fs.monize.ui.activity.transaction
+package com.fs.monize.ui.activity.getstarted
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.fs.monize.R
 
-class DetilDebtActivity : AppCompatActivity() {
+class get_started : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detil_debt)
+        setContentView(R.layout.activity_get_started)
     }
 }

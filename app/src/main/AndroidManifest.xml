@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Monize">
-        <activity android:name=".ui.activity.profile.ProfileActivity"></activity>
+        <activity
+            android:name=".ui.activity.getstarted.get_started"
+            android:exported="true" />
+        <activity android:name=".ui.activity.profile.ProfileActivity" />
         <activity android:name=".ui.activity.transaction.DetilCreditActivity" />
         <activity android:name=".ui.activity.transaction.DetilDebtActivity" />
         <activity
