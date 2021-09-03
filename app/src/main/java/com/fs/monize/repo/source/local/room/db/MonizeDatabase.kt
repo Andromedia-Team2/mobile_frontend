@@ -5,9 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.fs.monize.repo.source.local.entity.*
-import com.fs.monize.repo.source.local.room.dao.FundDao
-import com.fs.monize.repo.source.local.room.dao.TransactionDao
-import com.fs.monize.repo.source.local.room.dao.UserDao
+import com.fs.monize.repo.source.local.room.dao.*
 
 @Database(
     entities = [
@@ -22,6 +20,8 @@ abstract class MonizeDatabase : RoomDatabase(){
     abstract fun userDao(): UserDao
     abstract fun transactionDao(): TransactionDao
     abstract fun fundDao(): FundDao
+    abstract fun assetDao(): AssetDao
+    abstract fun savingDao(): SavingDao
 
     companion object {
         @Volatile

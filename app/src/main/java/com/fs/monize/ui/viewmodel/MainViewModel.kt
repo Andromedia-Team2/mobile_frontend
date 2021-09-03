@@ -3,9 +3,7 @@ package com.fs.monize.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.fs.monize.repo.FundRepository
-import com.fs.monize.repo.source.local.entity.FundEntity
-import com.fs.monize.repo.source.local.entity.TransactionEntity
-import com.fs.monize.repo.source.local.entity.UserEntity
+import com.fs.monize.repo.source.local.entity.*
 
 class MainViewModel (private val fundRepository: FundRepository): ViewModel() {
 
@@ -26,4 +24,16 @@ class MainViewModel (private val fundRepository: FundRepository): ViewModel() {
     fun deleteFund(fund: FundEntity) = fundRepository.deleteFund(fund)
     fun getFund(): LiveData<List<FundEntity>> = fundRepository.getFund()
     fun getFundById(fundId: Int): LiveData<FundEntity> = fundRepository.getFundById(fundId)
+
+    fun insertAsset(asset: AssetEntity) = fundRepository.insertAsset(asset)
+    fun updateAsset(asset: AssetEntity) = fundRepository.updateAsset(asset)
+    fun deleteAsset(asset: AssetEntity) = fundRepository.deleteAsset(asset)
+    fun getAsset(): LiveData<List<AssetEntity>> = fundRepository.getAsset()
+    fun getAssetById(assetId: Int): LiveData<AssetEntity> = fundRepository.getAssetById(assetId)
+
+    fun insertSaving(saving: SavingEntity) = fundRepository.insertSaving(saving)
+    fun updateSaving(saving: SavingEntity) = fundRepository.updateSaving(saving)
+    fun deleteSaving(saving: SavingEntity) = fundRepository.deleteSaving(saving)
+    fun getSaving(): LiveData<List<SavingEntity>> = fundRepository.getSaving()
+    fun getSavingById(savingId: Int): LiveData<SavingEntity> = fundRepository.getSavingById(savingId)
 }

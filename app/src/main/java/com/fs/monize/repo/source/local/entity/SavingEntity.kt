@@ -14,26 +14,22 @@ data class SavingEntity(
     @ColumnInfo(name = "saving_id")
     var saving_id: Int?,
 
-    @ColumnInfo(name = "user_id")
-    var user_id: Int,
+    @ColumnInfo(name = "saving_name")
+    var saving_name: String? = null,
 
-    @ColumnInfo(name = "asset_id")
-    var asset_id: Int,
+    @ColumnInfo(name = "saving_nominal")
+    var saving_nominal: Int,
 
-    @ColumnInfo(name = "date_save")
-    var date_sav: String? = null,
+    @ColumnInfo(name = "saving_balance")
+    var saving_balance: Int,
 
-    @ColumnInfo(name = "nominal_save")
-    var nominal_sav: Int,
-
-    @ColumnInfo(name = "desc_save")
-    var desc_sav: String? = null
+    @ColumnInfo(name = "saving_periode")
+    var saving_periode: String? = null
 ): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readInt(),
-        parcel.readInt(),
         parcel.readString(),
+        parcel.readInt(),
         parcel.readInt(),
         parcel.readString()
     ) {
@@ -41,11 +37,10 @@ data class SavingEntity(
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeValue(saving_id)
-        parcel.writeInt(user_id)
-        parcel.writeInt(asset_id)
-        parcel.writeString(date_sav)
-        parcel.writeInt(nominal_sav)
-        parcel.writeString(desc_sav)
+        parcel.writeString(saving_name)
+        parcel.writeInt(saving_nominal)
+        parcel.writeInt(saving_balance)
+        parcel.writeString(saving_periode)
     }
 
     override fun describeContents(): Int {

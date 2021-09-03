@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.Observer
 import android.widget.CalendarView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -11,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.fs.monize.R
 import com.fs.monize.databinding.ActivityTransactionBinding
+import com.fs.monize.repo.source.local.entity.FundEntity
 import com.fs.monize.repo.source.local.entity.TransactionEntity
 import com.fs.monize.ui.activity.dashboard.DashboardActivity
 import com.fs.monize.ui.viewmodel.MainViewModel
@@ -26,6 +28,8 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityTransactionBinding
     private lateinit var mainViewModel: MainViewModel
     private lateinit var transactionEntity: TransactionEntity
+    private lateinit var fundEntity: FundEntity
+    private lateinit var listFund: List<FundEntity>
     private var category = "income"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -242,6 +246,14 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
         val sdf = SimpleDateFormat("dd MMMM yyyy")
         val currentDate = sdf.format(Date())
         binding.txtDate.text = currentDate
+
+        fetchFund()
+    }
+
+    private fun fetchFund(){
+        mainViewModel.getFund().observe(this, Observer { list_fund ->
+            listFund = list_fund
+        })
     }
 
     private fun saveData(){
@@ -250,8 +262,33 @@ class TransactionActivity : AppCompatActivity(), View.OnClickListener {
         val desc = binding.descInput.text.toString()
         val date = binding.txtDate.text.toString()
         val icon = binding.txtIcon.text.toString()
-        transactionEntity = TransactionEntity(0, name, nominal, desc, date, icon, category )
+        val id = (0..9999).random()
+
+        if (listFund.size != 0) {
+            if (category == "income"){
+                val balance = listFund[0].fund_balance + nominal
+                val debit = listFund[0].debit_balance + nominal
+                fundEntity = FundEntity(0, balance, listFund[0].credit_balance, debit)
+            }else{
+                val balance = listFund[0].fund_balance - nominal
+                val credit = listFund[0].credit_balance + nominal
+                fundEntity = FundEntity(0, balance, credit, listFund[0].debit_balance)
+            }
+        } else {
+            if (category == "income"){
+                fundEntity = FundEntity(0, nominal, 0, nominal)
+            }else{
+                Toast.makeText(this, "Anda belum memasukkan saldo anda", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        transactionEntity = TransactionEntity(id, name, nominal, desc, date, icon, category )
+        mainViewModel.insertFund(fundEntity)
         mainViewModel.insertTransaction(transactionEntity)
+        success()
+    }
+
+    private fun success(){
         Toast.makeText(this, "Data Disimpan", Toast.LENGTH_SHORT).show()
         startActivity(Intent(this, DashboardActivity::class.java))
         finish()

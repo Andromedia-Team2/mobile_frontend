@@ -14,22 +14,33 @@ data class AssetEntity(
     @ColumnInfo(name = "asset_id")
     var asset_id: Int?,
 
-    @ColumnInfo(name = "fund_id")
-    var fund_id: Int,
+    @ColumnInfo(name = "asset_name")
+    var asset_name: String? = null,
+
+    @ColumnInfo(name = "asset_desc")
+    var asset_desc: String? = null,
+
+    @ColumnInfo(name = "asset_icon")
+    var asset_icon: String? = null,
 
     @ColumnInfo(name = "asset_balance")
     var asset_balance: Int
+
 ): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readInt(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
         parcel.readInt()
     ) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeValue(asset_id)
-        parcel.writeInt(fund_id)
+        parcel.writeString(asset_name)
+        parcel.writeString(asset_desc)
+        parcel.writeString(asset_icon)
         parcel.writeInt(asset_balance)
     }
 
