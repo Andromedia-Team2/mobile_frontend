@@ -10,7 +10,8 @@
         android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:paddingBottom="100dp">
             <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
@@ -49,46 +50,41 @@
                         android:textSize="12dp" /></LinearLayout>
 
             </LinearLayout>
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvTotal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
+                android:layout_height="100dp"
                 android:layout_marginStart="49dp"
                 android:layout_marginTop="120dp"
                 android:layout_marginEnd="49dp"
-                app:cardCornerRadius="25dp"
+                app:cardCornerRadius="20dp"
                 app:cardElevation="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/linearLayout2">
-
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/coba"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
-
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="9dp"
                         android:textSize="10dp"
-                        android:text="Saldo Saya"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:id="@+id/saldoTotal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="11dp"
-                        android:layout_marginBottom="11dp"
-                        android:text="Rp. 330.000.,-"
+                        android:gravity="center"
                         android:textColor="@color/black"
+                        android:text="Saldo Saya"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="11dp"/>
+                    <TextView
+                        android:id="@+id/txt_saldo_dash"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:textSize="36dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        tools:text="Rp.  330.000.,-"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <LinearLayout
@@ -120,10 +116,11 @@
                         android:textColor="@color/black"
                         android:textSize="10dp" />
                     <TextView
+                        android:id="@+id/txt_debit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Rp.  330.000"
+                        tools:text="Rp.  330.000"
                         android:textStyle="bold"
                         android:textColor="@color/green" />
                 </LinearLayout>
@@ -147,10 +144,11 @@
                         android:textColor="@color/black"
                         android:textSize="10dp" />
                     <TextView
+                        android:id="@+id/txt_credit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Rp.  330.000"
+                        tools:text="Rp.  330.000"
                         android:textStyle="bold"
                         android:textColor="@color/red" />
                 </LinearLayout>

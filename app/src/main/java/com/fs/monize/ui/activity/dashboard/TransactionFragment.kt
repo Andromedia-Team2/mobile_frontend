@@ -39,6 +39,13 @@ class TransactionFragment : Fragment() {
     private fun setUpData(){
         val factory =ViewModelFactory.getInstance(activity!!.application)
         mainViewModel =ViewModelProvider(this, factory).get(MainViewModel::class.java)
+        mainViewModel.getFund().observe(this, Observer { listFund ->
+            if (listFund.size != 0){
+                binding.txtSaldo.text = "Rp. " + listFund[0].fund_balance.toString()+ ".-"
+            }else{
+                binding.txtSaldo.text = "Rp. 0.-"
+            }
+        })
         setUpRecycler()
     }
 

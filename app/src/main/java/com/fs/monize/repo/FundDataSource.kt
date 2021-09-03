@@ -1,9 +1,7 @@
 package com.fs.monize.repo
 
 import androidx.lifecycle.LiveData
-import com.fs.monize.repo.source.local.entity.FundEntity
-import com.fs.monize.repo.source.local.entity.TransactionEntity
-import com.fs.monize.repo.source.local.entity.UserEntity
+import com.fs.monize.repo.source.local.entity.*
 
 interface FundDataSource {
     //User Dao
@@ -26,4 +24,18 @@ interface FundDataSource {
     fun deleteFund(fund: FundEntity)
     fun getFund(): LiveData<List<FundEntity>>
     fun getFundById(fundId: Int): LiveData<FundEntity>
+
+    //Asset Dao
+    fun insertAsset(asset: AssetEntity)
+    fun updateAsset(asset: AssetEntity)
+    fun deleteAsset(asset: AssetEntity)
+    fun getAsset(): LiveData<List<AssetEntity>>
+    fun getAssetById(assetId: Int): LiveData<AssetEntity>
+
+    //Saving Dao
+    fun insertSaving(saving: SavingEntity)
+    fun updateSaving(saving: SavingEntity)
+    fun deleteSaving(saving: SavingEntity)
+    fun getSaving(): LiveData<List<SavingEntity>>
+    fun getSavingById(savingId: Int): LiveData<SavingEntity>
 }

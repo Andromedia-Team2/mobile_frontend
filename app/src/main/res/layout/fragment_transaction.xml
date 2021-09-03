@@ -6,124 +6,159 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.activity.dashboard.TransactionFragment"
     android:background="@color/purple_500">
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <LinearLayout
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="100dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="49dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
             <LinearLayout
-                android:id="@+id/linearLayout2"
+                android:id="@+id/coba"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/round_bg_blue_bottom"
-                android:orientation="horizontal">
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/foto"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="37dp"
-                    android:layout_marginLeft="21dp"
-                    android:src="@color/white" />
-                <LinearLayout
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="37dp">
-                    <TextView
-                        android:id="@+id/txt1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Hai, User"
-                        android:textColor="@color/white"
-                        android:textSize="16dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Bagaimana Kabar Keuanganmu ?"
-                        android:layout_marginTop="4dp"
-                        android:textColor="@color/white"
-                        android:textSize="12dp" />
-                </LinearLayout>
-            </LinearLayout>
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginLeft="49dp"
-                android:layout_marginRight="49dp"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="20dp">
-                <LinearLayout
-                    android:id="@+id/coba"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="11dp"
+                    android:gravity="center"
+                    android:text="Saldo Saya"
+                    android:textColor="@color/black"
+                    android:textSize="10dp" />
+
+                <TextView
+                    android:id="@+id/txt_saldo"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="10dp"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:text="Saldo Saya"
-                        android:layout_marginTop="7dp"
-                        android:layout_marginBottom="11dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textSize="36dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:text="Rp.  330.000.,-"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    tools:text="Rp.  330.000.,-"
+                    android:textColor="@color/black"
+                    android:textSize="36dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
         <LinearLayout
+            android:id="@+id/linearLayout4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_bg_blue_bottom"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/foto"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="21dp"
+                        android:layout_marginTop="37dp"
+                        android:src="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="37dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txt1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hai, User"
+                            android:textColor="@color/white"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Bagaimana Kabar Keuanganmu ?"
+                            android:textColor="@color/white"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/round_bg"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14dp"
-                android:textStyle="bold"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="22dp"
                 android:text="Transaksi terakhir"
                 android:textColor="@color/black"
-                android:layout_marginTop="22dp"
-                android:layout_marginLeft="20dp"/>
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_transaction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="26dp"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="26dp"
                 android:layout_marginRight="20dp"
-                android:paddingBottom="26dp"
-                tools:listitem="@layout/item_transaction"/>
+                android:paddingBottom="50dp"
+                tools:listitem="@layout/item_transaction" />
+            <LinearLayout
+                android:id="@+id/linear_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/empty" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data Transaksi Kosong"
+                    android:textSize="16dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
         </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/linear_empty"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center">
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/empty"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Data Transaksi Kosong"
-            android:textStyle="bold"
-            android:textSize="18sp"/>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

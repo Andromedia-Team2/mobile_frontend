@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/navbar"
         app:menu="@menu/menu_navbar"
+        app:elevation="10dp"
         app:labelVisibilityMode="labeled"
         android:layout_alignParentBottom="true">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
